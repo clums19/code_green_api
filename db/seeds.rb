@@ -9,8 +9,7 @@
 100.times do
     Message.create(
         name: Faker::TvShows::DrWho.character, 
-        message: Faker::TvShows::DrWho.quote, 
-        topic: "Doctor Who"
+        message: Faker::TvShows::DrWho.quote,
     )
 end
 
