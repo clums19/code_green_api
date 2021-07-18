@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 100.times do
+    rand_num = rand(1..6)
     Message.create(
-        name: Faker::TvShows::DrWho.character, 
+        user_id: rand_num,
         message: Faker::TvShows::DrWho.quote,
     )
 end
