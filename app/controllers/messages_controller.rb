@@ -1,26 +1,39 @@
 class MessagesController < ApplicationController
     def index
-        @messages = Message.order('created_at DESC')
-        render json: {status: 200, messages: @messages}
+        messages = Message.order('created_at DESC')
+        render json: {status: 200, messages: messages}
     end
+
     def show
-        found_message = Message.find(params[:id])
-        render json: {status: 200, message: found_message}
+        message = Message.find(params[:id])
+        render json: {status: 200, message: message}
     end
 
     def create
         message = Message.new(message_params)
         if message.save
-            render json: { message: message }
+            render json: { status: 201, message: message }
         else
-            render(status: 422, json: { message: message, errors: message.errors })
+            render json: {status: 422, message: message, error: message.errors}
         end
     end
 
-    private
+    def update
+        message = Message.find(params[:id])
+        message.update(message_params)
+        render json: { message: message, status: 201}
 
-    def message_params
-        params.require(:message).permit(:message, :topic, :name)
     end
+
+    def destroy
+        message = Message.find(params[:id])
+        message.destroy
+        render json: { message: message, status: 204 }
+    end
+
+    private
+        def message_params
+            params.require(:message).permit(:message, :topic, :name)
+        end
 
 end
