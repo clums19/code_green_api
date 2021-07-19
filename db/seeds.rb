@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do
+4.times do
     rand_num = rand(1..6)
     Message.create(
         user_id: rand_num,
@@ -14,7 +14,7 @@
     )
 end
 
-100.times do
+4.times do
     rand_user = rand(1..6)
     rand_message = rand(405..504)
     Reply.create(
@@ -23,5 +23,13 @@ end
         content: Faker::TvShows::TwinPeaks.quote,
     )
 end
+
+users = User.create([
+    {name: 'Chelsea', password:'123'},
+    {name: 'Guled', password:'1234'},
+    {name: 'Obi', password:'12345'},
+    {name: 'Blake', password:'123456'},
+])
+
 
 puts "Seeded Database"
