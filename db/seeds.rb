@@ -10,7 +10,17 @@
     rand_num = rand(1..6)
     Message.create(
         user_id: rand_num,
-        message: Faker::TvShows::DrWho.quote,
+        content: Faker::TvShows::DrWho.quote,
+    )
+end
+
+100.times do
+    rand_user = rand(1..6)
+    rand_message = rand(405..504)
+    Reply.create(
+        user_id: rand_user,
+        message_id: rand_message,
+        content: Faker::TvShows::TwinPeaks.quote,
     )
 end
 

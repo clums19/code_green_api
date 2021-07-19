@@ -1,4 +1,5 @@
 class Message < ApplicationRecord
-    validates :message, presence: true
+    validates :content, presence: true
     belongs_to :user
+    has_many :replies
 end

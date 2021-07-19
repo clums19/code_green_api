@@ -1,20 +1,22 @@
 class MessagesController < ApplicationController
+    before_action :set_notice, only: [:show, :update, :destroy]
+    
     def index
-        messages = Message.order('created_at DESC')
-        render json: {status: 200, messages: messages}
+        @messages = Message.all
+
+        render json: @messages.to_json(include: :user)
     end
 
     def show
-        message = Message.find(params[:id])
-        render json: {status: 200, message: message}
+        render json: @message
     end
 
     def create
-        message = Message.new(message_params)
-        if message.save
-            render json: { status: 201, message: message }
+        @message = Message.new(message_params)
+        if @message.save
+            render json: @message, status: :created, user: @message
         else
-            render json: {status: 422, message: message, error: message.errors}
+            render json: @message.errors, status: :unprocessable_entity
         end
     end
 
@@ -34,6 +36,10 @@ class MessagesController < ApplicationController
     private
         def message_params
             params.require(:message).permit(:message, :topic, :name)
+        end
+
+        def set_message
+            @message = Message.find(params[:id])
         end
 
 end
