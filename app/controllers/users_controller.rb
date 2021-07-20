@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
 
   def auto_login
+    puts @user
     render json: @user
   end
 
