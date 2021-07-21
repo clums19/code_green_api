@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       token = encode_token({user_id: @user.id})
       render json: {user: @user, token: token}
+      puts "THIS IS THE INFORMATION WE'RE LOOKING FOR!!!!!"
       puts @user
     else
       render json: {error: "Invalid username or password"}

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    # before_action :authorized
+    before_action :authorized
 
   def encode_token(payload)
     JWT.encode(payload, ENV['SECRET_KEY'])
@@ -23,6 +23,7 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in_user
+    puts "creating logged in user!!!!!"
     if decoded_token
       user_id = decoded_token[0]['user_id']
       @user = User.find_by(id: user_id)
@@ -35,5 +36,7 @@ class ApplicationController < ActionController::API
 
   def authorized
     render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+    puts status
+    
   end
 end
