@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     # before_action :authorized
     
     def index
-        @messages = Message.all
+        @messages = Message.order('created_at ASC')
         render json: @messages.to_json(include: :user)
     end
 
