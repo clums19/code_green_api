@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = User.create([
+    {name: 'Chelsea', password:'123'},
+    {name: 'Guled', password:'1234'},
+    {name: 'Obi', password:'12345'},
+    {name: 'Blake', password:'123456'},
+])
 
 40.times do
     rand_num = rand(1..9)
@@ -24,12 +30,6 @@ end
 #     )
 # end
 
-# users = User.create([
-#     {name: 'Chelsea', password:'123'},
-#     {name: 'Guled', password:'1234'},
-#     {name: 'Obi', password:'12345'},
-#     {name: 'Blake', password:'123456'},
-# ])
 
 
 puts "Seeded Database"
