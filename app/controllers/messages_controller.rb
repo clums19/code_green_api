@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
     before_action :set_message, only: [:show, :update, :destroy]
-    before_action :authorized
+    # before_action :authorized
     
     def index
         @messages = Message.all
