@@ -29,7 +29,7 @@ Our project was organized on this [Trello board](https://trello.com/b/oMP3lmGH/p
 ![ERD v1](https://i.imgur.com/UVh3Obc.png)
 
 ## Getting Started
-Click here to see a live, working version of the app!
+[Click here](https://code-green-app.herokuapp.com/) to see a live, working version of the app!
 
 ## Group Members
 * Guled Ahmed - Project Manager [GitHub](https://github.com/gguleid) - [LinkedIn](https://www.linkedin.com/in/guled-ahmed-38a69055/)
