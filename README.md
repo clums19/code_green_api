@@ -7,8 +7,14 @@ Code_Green is an internal messaging app created for a fictitious garden-tech com
 
 ## Technologies Used
 * Ruby, Ruby on Rails
+* React
+* HTML
+* CSS
 * PostgreSQL
-* Firebase Authentication
+* JWT 
+* Heroku
+* Affinity designer
+* Flaticon
 
 
 ## Screenshots
