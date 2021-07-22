@@ -10,7 +10,11 @@ Code_Green is an internal messaging app created for a fictitious garden-tech com
 * PostgreSQL
 * Firebase Authentication
 
+
 ## Screenshots
+![Screenshot](https://i.imgur.com/6WWbcOP.png)
+
+![Screenshot](https://i.imgur.com/mhgWjba.png)
 
 ## Wireframes and Organization
 
